@@ -1,12 +1,12 @@
 import React from 'react';
-import api from './utils/Api';
+import api from '../utils/Api';
 import Card from './Card';
 
 function Main(props) {
     //Стейт перменные состояния информации о пользователе
-    const [UserName, setUserName] = React.useState();
-    const [UserDescription, setUserDescription] = React.useState();
-    const [UserAvatar, setUserAvatar] = React.useState();
+    const [userName, setUserName] = React.useState('');
+    const [userDescription, setUserDescription] = React.useState('');
+    const [userAvatar, setUserAvatar] = React.useState('');
 
     //Стейт переменные состояния информации по карточкам
     const [cards, setCards] = React.useState([]);
@@ -21,16 +21,14 @@ function Main(props) {
         .catch( res => {
             console.log(res);
         })
-    }, []);
 
-    React.useEffect(() => {
-        api.getInitialCards()
+       api.getInitialCards()
             .then( res => {
                 setCards(res);
             })
             .catch( res => {
                 console.log(res);
-            })
+            }) 
     }, []);
 
     return (
@@ -38,13 +36,13 @@ function Main(props) {
             <section className="profile">
                 <div className="profile__wrapper">
                     <div className="profile__img-wrapper">
-                        <img src={UserAvatar} alt="Фотография пользователя" className="profile__avatar" />
+                        <img src={userAvatar} alt="Фотография пользователя" className="profile__avatar" />
                         <button className="profile__avatar-btn" onClick={props.onEditAvatar}></button>
                     </div>
                     <div className="profile__info">
-                        <h1 className="profile__name">{UserName}</h1>
+                        <h1 className="profile__name">{userName}</h1>
                         <button className="profile__edit-button" onClick={props.onEditProfile}></button>
-                        <p className="profile__description">{UserDescription}</p>
+                        <p className="profile__description">{userDescription}</p>
                     </div>
                 </div>
                 <button type="submit" className="profile__add-button" onClick={props.onAddPlace}></button>

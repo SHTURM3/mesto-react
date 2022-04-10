@@ -6,7 +6,7 @@ function handleClick(){
 }
  return(
     <li className="elements__item">
-        <img src={props.card.link} alt="Описание карточки" className="elements__img" onClick={handleClick} />
+        <img src={props.card.link} alt={props.card.name} className="elements__img" onClick={handleClick} />
         <button type="button" className="elements__trash-btn"></button>
         <div className="elements__description">
             <h2 className="elements__name">{props.card.name}</h2>
