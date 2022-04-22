@@ -32,6 +32,8 @@
 @import url('./blocks/elements/__item/elements__item.css');
 @import url('./blocks/elements/__img/elements__img.css');
 @import url('./blocks/elements/__trash-btn/elements__trash-btn.css');
+@import url('./blocks/elements/__trash-btn/_visible/elements__trash-btn_visible.css');
+@import url('./blocks/elements/__trash-btn/_hidden/elements__trash-btn_hidden.css');
 @import url('./blocks/elements/__description/elements__description.css');
 @import url('./blocks/elements/__name/elements__name.css');
 @import url('./blocks/elements/__button/elements__button.css');
