@@ -14,7 +14,7 @@ import CurrentUserContext from '../contexts/CurrentUserContext';
 function App() {
 
   // Стейт переменная информации о пользователе
-  const [currentUser, setCurrentUser ] = React.useState('');
+  const [currentUser, setCurrentUser ] = React.useState({});
 
   // Стейт переменная карточки места
   const [selectedCard, setSelectedCard] = React.useState({});
